@@ -1,0 +1,86 @@
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100vh;
+    background: linear-gradient(to left, #f005, #ff5);
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 0 4px #444;
+    text-align: center;
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr;
+    gap: 15px;
+}
+
+.domino {
+    font-size: 45px;
+    color: #f50;
+}
+
+#roll {
+    width: fit-content;
+    margin:  0 auto;
+    padding: 5px 8px;
+    border-radius: 8px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 2px blue;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#roll:active {
+    box-shadow: 0 0px 2px blue;
+    transform: translateY(4px);
+}
+
+#roll:hover {
+    opacity: .5;
+}
+
+.listes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 8px 10px;
+}
+
+.listes .item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animate_domino {
+    animation: turn 1s forwards;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
